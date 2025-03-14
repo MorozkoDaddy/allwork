@@ -1,0 +1,31 @@
+{
+    "surname": {
+      "name": "Imya",
+      "id": "12"
+    },
+    "products": {
+        "name": "Product A",
+        "id": "1"
+      },
+      "product B": {
+        "name": "Product B",
+        "id": "321"
+      },
+      "product C": {
+        "name": "Product C",
+        "id": "3"
+      },
+      "employees": {
+
+        "id": "1001",
+        "name": "Name 1"
+      },
+      "twoempl": {
+        "id": "1002",
+        "name": "Jane"
+      },
+      "treeempl": {
+        "id": "1003",
+        "name": "Bob"
+      }
+  }
