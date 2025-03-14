@@ -1,0 +1,47 @@
+#include <iostream>
+
+class NumberChecker {
+private:
+    int number;
+
+public:
+    NumberChecker(int n) : number(n) {}
+
+    bool isEven() const {
+        return number % 2 == 0;
+    }
+
+    int getNumber() const {
+        return number;
+    }
+
+    void printIfEven() const {
+        if (isEven()) {
+            std::cout << "Четное число: " << number << std::endl;
+        }
+    }
+
+    void printIfLargerOdd(const NumberChecker& other) const {
+        if (!isEven() && number > other.getNumber()) {
+            std::cout << "Большее нечетное число: " << number << std::endl;
+        }
+    }
+};
+
+int main() {
+    int x, y;
+
+    std::cout << "Введите два целых числа: ";
+    std::cin >> x >> y;
+
+    NumberChecker first(x);
+    NumberChecker second(y);
+
+    first.printIfEven();      
+    second.printIfEven();      
+
+    first.printIfLargerOdd(second);    
+    second.printIfLargerOdd(first);     
+
+    return 0;
+}

@@ -1,0 +1,42 @@
+#include <iostream>
+#include <cmath>
+
+class Runner {
+private:
+    double distance;
+    int day;
+
+public:
+    Runner(double initialDistance) : distance(initialDistance), day(0) {}
+
+    void runUntilDistance(double targetDistance) {
+        while (distance < targetDistance) {
+            distance *= 1.1;
+            day++;
+            std::cout << "Достижение " << targetDistance << " км достигнуто на " << day << "-й день. Текущая дистанция: " << distance << " км" << std::endl;
+
+        }
+        std::cout << "Цель в " << targetDistance << " км достигнута." << std::endl;
+    }
+
+    int getDays() const {
+        return day;
+    }
+
+    double getDistance() const {
+        return distance;
+    }
+};
+
+int main() {
+    Runner runner(10);
+
+    // Пробег больше 20 км
+    runner.runUntilDistance(20);
+
+    // Пробег больше 100 км
+    runner.runUntilDistance(100);
+
+
+    return 0;
+}

@@ -1,0 +1,58 @@
+#include <iostream>
+
+class NaturalNumber {
+private:
+    int value;
+public:
+    NaturalNumber() : value(0) {}
+    
+    explicit NaturalNumber(int num) : value(num) {}
+    
+    void input() {
+        std::cout << "Введите натуральное число: ";
+        std::cin >> value;
+    }
+    
+    int getValue() const {
+        return value;
+    }
+    
+    void print() const {
+        std::cout << value << std::endl;
+    }
+    
+    bool isGreaterThan(const NaturalNumber& other) const {
+        return value > other.value;
+    }
+};
+
+int main() {
+    NaturalNumber natX, natY;
+    
+    natX.input();
+    natY.input();
+    
+    if (natX.isGreaterThan(natY)) {
+        std::cout << "Максимальное число: ";
+        natX.print();
+    } else {
+        std::cout << "Максимальное число: ";
+        natY.print();
+    }
+    
+    int sum = natX.getValue() + natY.getValue();
+    std::cout << "Сумма: " << sum << std::endl;
+    
+    int maxDigitSum = 0;
+    while (sum != 0) {
+        int digit = sum % 10;
+        if (digit > maxDigitSum) {
+            maxDigitSum = digit;
+        }
+        sum /= 10;
+    }
+    
+    std::cout << "Максимальная цифра в сумме: " << maxDigitSum << std::endl;
+    
+    return 0;
+}

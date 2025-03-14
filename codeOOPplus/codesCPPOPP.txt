@@ -1,0 +1,60 @@
+#include <iostream>
+
+class ArrayProcessor {
+private:
+    int* array;
+    int size;
+
+public:
+    ArrayProcessor(int size) : size(size) {
+        array = new int[size];
+    }
+
+    ~ArrayProcessor() {
+        delete[] array;
+    }
+
+    void inputArray() {
+        std::cout << "Ввод значений массива:\n";
+        for (int i = 0; i < size; ++i) {
+            std::cout << "Введите элемент " << i + 1 << ": ";
+            std::cin >> array[i];
+        }
+    }
+
+    void displayArray() {
+        std::cout << "Введённые элементы массива:\n";
+        for (int i = 0; i < size; ++i) {
+            std::cout << array[i] << ' ' << "\n";
+        }
+    }
+
+    int calculateProduct() {
+        int product = 1;
+        for (int i = 0; i < size; ++i) {
+            product *= array[i];
+        }
+        return product;
+    }
+
+    void compareProductWithThreshold(int threshold) {
+        int product = calculateProduct();
+        std::cout << "Результат умножения массива: " << product << "\n";
+        if (product > threshold) {
+            std::cout << "Результат больше " << threshold << "\n";
+        } else {
+            std::cout << "Результат меньше " << threshold << "\n";
+        }
+    }
+};
+
+int main() {
+    const int size = 8;
+    ArrayProcessor processor(size);
+
+    processor.inputArray();
+    processor.displayArray();
+    processor.compareProductWithThreshold(10000);
+
+    return 0;
+}
