@@ -1,3 +1,6 @@
+// счет с json файла 4 лаба
+
+
 import json
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
