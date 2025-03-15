@@ -1,3 +1,6 @@
+
+// движеие авто вдоль дороги. Какая то лаба
+
 class TCar:
     def __init__(self, road0, p0, v0 ):
         self.road = road0
