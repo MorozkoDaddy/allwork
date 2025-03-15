@@ -1,3 +1,6 @@
+//паттерн вычисление файлика json (4 лаба)
+
+
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from mainwindow import Ui_MainWindow
