@@ -1,3 +1,6 @@
+// сбор инфы с json файла(хз какая лаба)
+
+
 import sys
 import json
 from PyQt5.QtCore import Qt
