@@ -2,7 +2,7 @@ x = int(input('Введите сторону : '))
 
 import math
 
-class calc:
+class Mathe:
     def __init__(self, x):
         self.x = x
 
